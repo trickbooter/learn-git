@@ -50,36 +50,72 @@
 						<small>Git Basics</small>
 					</p>
 				</section>
-
+				
 				<section>
-					<h2>Why Git</h2>
+					<h2>Why Git?</h2>
 					<p>
 						TL;DR; everyone else is using it. Skill up.
 					</p>
-					<small>
 					<ul>
 					  <li>Distributed - everyone has a complete local copy</li>
-					  <li>Develop offline</li>
-					  <li>See all history</li>
+					  <li>Develop offline; see all history</li>
 					  <li>Branch, commit, merge locally, control - paint your picture</li>
 					  <li>FAST</li>
 					  <li>Encourage better development practices</li>
 					</ul>
-					</small>
 				</section>
 				
 				<section>
-					<h2>Repository Concepts</h2>
-					<small>
-					We'll look at each of these in turn.
-					<ul>
-					  <li>Graph model - DAG</li>
-					  <li>3 Repo Areas, Working Copy, Staging, HEAD</li>
-					  <li>Local Repo</li>
-					  <li>Remotes</li>
-					  <li>Branches</li>
-					</ul>
-					</small>
+					<section>
+						<h2>Git Repository Concepts</h2>
+						<p>(and knowledge check)</p>
+						<ul>
+						  <li>Repository Areas</li>
+						  <li>Branches</li>
+						  <li>Remotes</li>
+						  <li>The Repository is a DAG</li>
+						  <li>Refs</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Repository Areas</h2>
+						<ul>
+						  <li>Working Copy - where you do the work</li>
+						  <li>Staging/Stage/Index - a commit shopping basket used to organise what goes into a commit</li>
+						  <li>Repo - the immutable commit store. The latest commit is referenced as HEAD</li>
+						</ul>
+						<img data-src="https://rogerdudler.github.com/git-guide/img/trees.png"/>
+					</section>
+					<section>
+						<h2>Branches</h2>
+						<ul>
+						  <li>A way to isolate your changes from everyone else</li>
+						  <li>Make all the mistakes you like on a private branch (but try not to)</li>
+						  <li>Switch to other branches to make (i.e. make hotfix for release)</li>
+						</ul>
+						<img data-src="https://rogerdudler.github.com/git-guide/img/branches.png"/>
+					</section>
+					<section>
+					  <h2>DAG</h2>
+					  <p>The Repository is a Directed Acyclic Graph</p>
+						<ul>
+						  <li>Each commit is uniquely identified (circles)</li>
+						  <li>Each commit points to only one parent commit (black arrows)</li>
+						  <li>Pointers are acyclic (linear, can't create a closed loop of commits)</li>
+						</ul>
+						<img data-src="http://think-like-a-git.net/assets/images2/reachability-example.png"/>
+					</section>
+					<section>
+						<h2>Refs</h2>
+						  <ul>
+						    <li>A reference (or ref) is a pointer to a commit or another ref</li>
+						    <li>They come in the following flavours: local branch, remote branch and tag</li>
+						    <li>A branch is identified by a ref pointing to the last (HEAD) commit on that branch</li>
+						  </ul>
+					</section>
+					
+					
+					
 				</section>
 				
 				<section>
