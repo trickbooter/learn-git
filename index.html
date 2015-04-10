@@ -50,28 +50,28 @@
 						<small>Git Basics</small>
 					</p>
 				</section>
-				
+
 				<section data-markdown>
-					
+
 					## What am I learning
 
 					This training is split into 3 sessions
-					
+
 					* Git Basics
 					* Git Remotes, Branching & Merging
-					* Git Workflow  
+					* Git Workflow
 
 					## Prerequisites
 
 					* Have a git client installed (recommended via Chocolatey)
-					* Have Source Tree installed  
+					* Have Source Tree installed
 
 					## Conventions
-					
+
 					* Using Windows path separators
-					
+
 				</section>
-				
+
 				<section>
 					<h2>Why Git?</h2>
 					<p>
@@ -85,7 +85,7 @@
 					  <li>Encourage better development practices</li>
 					</ul>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>Git Repository Concepts</h2>
@@ -156,26 +156,26 @@
 				<section>
 					<section data-markdown>
 						## Create a New Repository
-						
+
 						Objective: Initialise a new repository and look at the git artefacts
-						
+
 						Create two directories for ui and command line.
-						
+
 						* c:/git/learn-git-ui
 						* c:/git/learn-git
 					</section>
 					<section data-markdown>
 						## SourceTree
-						
+
 						  * Clone/New
 						  * Create New Repository tab
 						  * Repo Type=git; Path=c:\git\learn-git-ui
-						  
+
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/git-init.PNG)
 					</section>
 					<section data-markdown>
 						## Git Bash
-						
+
 						```
 						cd /c/git/learn-git
 						git init
@@ -183,87 +183,87 @@
 						```
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Add Content
-						
+
 						Objective: Add content to the repo, understand the working copy, staging area and HEAD.
-						
+
 						Create a text file README.md in c:\git\learn-git
-						
+
 						```
 						## Learn-Git Readme
-						
+
 						I am learning git
 						```
 						Copy the file to c:\git\learn-git-ui
-						
+
 					</section>
 					<section data-markdown>
 						## Add Content Using SourceTree
-						
+
 						  * File will appear in 'Working Copy'
 						  * Set view to 'Pending Files Sorted By Status'
 						  * Tick README.txt to add file to Staging area
 						  * Click commit, add a message "Adding README.txt" and commit
-						  
+
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/first-commit-staged.PNG)
-						  
+
 					</section>
 					<section data-markdown>
 						## Add Content Using Git Bash
-						
+
 						```
 						git status
 						git add README.md
 						git status
 						git commit -m "Adding README.md"
 						```
-						
+
 						_git status_ is very useful
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Modify Content
-						
+
 						Objective: Modify existing content
-						
+
 						Edit the README.txt in c:\git\learn-git
-						
+
 						```
 						## Learn-Git Readme
-						
+
 						I am learning git.
 						Git is great.
 						```
 						Copy & replace the file to c:\git\learn-git-ui
-						
+
 						Create specs.md in c:\git\learn-git\docs
-						
+
 						```
 						## Specification Data
-						
+
 						We need to learn git to survive.
 						```
 						Copy the file to c:\git\learn-git-ui\docs
-						
+
 					</section>
 					<section data-markdown>
 						## Modify Content Using SourceTree
-						
+
 						  * Files will appear in 'Working Copy'
 						  * Tick README.txt & \docs\specs.md to add file to Staging area
 						  * Click commit, add a message "Modifying README.md, adding specs.md" and commit
-						  
+
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/add-mod-unstaged.PNG)
-						  
+
 					</section>
 					<section data-markdown>
 						## Modify Content Using Git Bash
-						
+
 						```
 						git status
 						git add README.md
@@ -271,193 +271,193 @@
 						git status
 						git commit -m "Modifying README.md, adding specs.md"
 						```
-						
+
 						you can also use _git add --all_ to add everything that isn't tracked.
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Review History
-						
+
 						Objective: Inspect logs and map understanding to DAG model
-						
+
 					</section>
 					<section data-markdown>
 						## Review History Using SourceTree
-						
+
 						  * Click branches > master
-						  
+
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/git-log-ui.PNG)
-						  
+
 					</section>
 					<section data-markdown>
-						## Review History Using Git Bash 
-						
+						## Review History Using Git Bash
+
 						```
 						git log --oneline --all --abbrev-commit --graph
 						```
-						_--oneline_ shows line-per-commit  
-						_--all_ shows refs  
-						_--abbrev-commit_ first few characters of the commit id  
-						_--graph_ adds a 'graphical' view of the commit tree  
+						_--oneline_ shows line-per-commit
+						_--all_ shows refs
+						_--abbrev-commit_ first few characters of the commit id
+						_--graph_ adds a 'graphical' view of the commit tree
 						there are loads of options [here](git-scm.com/docs/git-log) but the UI is easier
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Branching
-						
+
 						Objective: Learn how to create a branch
-						
-						Branching isolates your development effort from other branches. 
-						
+
+						Branching isolates your development effort from other branches.
+
 					</section>
 					<section data-markdown>
 						## Branching Using SourceTree
-						
+
 						* Right click the commit you wish to branch from (choose the latest commit)
 						* Click branch
-						  
+
 						 ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/branch-ui-menu.png)
 						 ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/branch-ui-dialog.PNG)
 					</section>
 					<section data-markdown>
-						## Branching Using Git Bash 
-						
+						## Branching Using Git Bash
+
 						```
 						git branch my-feature-branch-a
 						```
-						
+
 						Branches the current branch's latest commit to my-feature-branch-a.
 					</section>
-					
+
 					<section data-markdown>
 						## Branching Review
-						
+
 						Look at the refs...
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/branches-ui.PNG)
-						
-						Both master and feature-branch-a point to the same commit. 
-						
-						A branch is just a reference to a commit, remember our DAG. The branch doesn't 
+
+						Both master and feature-branch-a point to the same commit.
+
+						A branch is just a reference to a commit, remember our DAG. The branch doesn't
 						physically create a new version of files like it would on TFS or SVN, it just adds a new ref.
 						Since we haven't made any changes, both master and feature-branch-a point to the same commit.
 						This is why git branching is so fast.
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/refs-small.png)
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Switch Between Branches
-						
+
 						Objective: Learn how to switch between branches
-						
+
 					</section>
 					<section data-markdown>
 						## Switch Between Branches Using SourceTree
-						
+
 						* Right click the branch that you wish to checkout
 						* Click checkout
 						* The branch in *bold* is the checked out branch
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/branches-ui.PNG)
-						
+
 						this will swap the files around in your working folder
-						  
+
 					</section>
 					<section data-markdown>
-						## Switch Between Branches Using Git Bash 
-						
+						## Switch Between Branches Using Git Bash
+
 						```
 						git checkout feature-branch-a
 						```
-						
+
 						You can combine a branch and switch in one command using
 						```
 						git checkout -b feature-branch-a
 						```
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Merging (Fast-Forward)
-						
-						Objective: Learn how to merge. 
-						
+
+						Objective: Learn how to merge.
+
 						We will make a change on feature-branch-a then merge feature-branch-a back into master.
-						
+
 						### What's a Merge and what are we doing?
-						
+
 						Merging allows you to update a branch with the contents of another. Such as merging your-amazing-feature into the master branch.
-						
+
 						We will focus on an easy merge scenarios at this stage. This is a special case called a *fast-forward* merge.
-						
+
 						### fast forward merges
 						Remember that a branch is just a *ref* to a commit. If the following is true
-						
-						* commits to feature-branch-a 
-						* no commits to master 
-						
+
+						* commits to feature-branch-a
+						* no commits to master
+
 						when we merge feature-branch-a into master they will be identical, so a fast-forward merge _moves the master pointer to the feature-branch-a HEAD_
 					</section>
 					<section data-markdown>
 						## Make a change on feature-branch-a
-						
+
 						Merges target the current branch. If we are on master and we merge feature-branch-a, we are asking for feature-branch-a to be merged into master .
-						
+
 						* Switch to feature-branch-a
 						* Make a change to c:\git\learn-git\README.txt & commit
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/feat-branch-a-change-small.PNG)
-						
+
 						note that master still points to the previous commit, and feature-branch-a has our latest commit
 					</section>
-					
+
 					<section data-markdown>
 						## Merge using Source Tree
-						
+
 						* Switch to master (our merge target branch)
 						* Right click the latest feature-branch-a commit and choose merge
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/merge-ui.png)
-						
-						As no other changes had occured on master, a merge will result in feature-branch-a and master becoming identical. 
-						
+
+						As no other changes had occured on master, a merge will result in feature-branch-a and master becoming identical.
+
 						Git recognises this and simply moves the master ref to the same commit as feature-branch-a.
-						
+
 					</section>
-					
+
 					<section data-markdown>
 						## Merge using Git Bash
-						
+
 						```
 						git checkout feature-branch-a
 						```
-						
+
 						* Make a change to README.md & commit
-						
+
 						```
 						git commit -m "changed README.md"
 						```
-						
+
 						* Switch to master and merge
-						
+
 						```
 						git checkout master
 						git merge feature-branch-a
 						```
-						
+
 					</section>
 				</section>
 
-				
-				
+
+
 				<section>
 					<h1>Learn Git</h1>
 					<h3>Session 2</h3>
@@ -468,21 +468,114 @@
 						<small>Git Remotes, Branching & Merging</small>
 					</p>
 				</section>
-				
+
+				<section>
+					<section data-markdown>
+						## Recap on Git Repo
+
+						Objective: Remind ourselves of commits, refs and the DAG
+
+					</section>
+					<section data-markdown>
+						## DAG
+
+					</section>
+					<section data-markdown>
+						## Commits & Commit Hash Codes
+
+vital - explains why get comparisons are fast
+what makes a hash
+					</section>
+
+					<section data-markdown>
+						## Refs
+
+					</section>
+				</section>
+
 				<section>
 					<section data-markdown>
 						## Remotes
-						
+
 						Objective: Learn what a remote is.
-						
+
 						A remote is another repository that you can link to your repository. **That's all**.
-						
+
 						There is nothing special about a remote, it is just another repository.
-						
+
 						You can mark one remote as _default_, and convention suggests we name this _origin_. Typically our default remote is BitBucket or GitHub.
 					</section>
+					<section data-markdown>
+						## Remotes from Cloning
+
+						If you want to take a copy of a remote repository from BitBucket or GitHub, you **clone** the repository.
+
+						Cloned repositories automatically get a default remote _origin_ added that points to the clone source.
+					</section>
+					<section data-markdown>
+						## Adding Remotes
+
+						Remotes can be added to an existing repository at any time.
+					</section>
 				</section>
-				
+
+				<section>
+					<section data-markdown>
+						## Clone a remote repository
+
+						Objective: Learn how to clone a remote repository
+
+
+					</section>
+					<section data-markdown>
+						## Clone using Source Tree
+
+
+					</section>
+				</section>
+
+				<section data-markdown>
+					## Collaborative Workflow
+
+					Objective: Learn how to use git collaboratively
+
+					We are going to
+					* clone the same repo.
+					* Isolate our feature development using a branch
+					* Do work on our branch
+					* Merge changes to master
+					* Push changes to remote
+
+				</section>
+
+				<section>
+					<section data-markdown>
+						## Clone the Repository
+
+					</section>
+
+					<section data-markdown>
+						## Branch to Isolate
+
+					</section>
+
+					<section data-markdown>
+						## Develop
+
+					</section>
+
+					<section data-markdown>
+						## Update your Branch
+
+					</section>
+
+					<section data-markdown>
+						## Push Changes
+
+					</section>
+
+				</section>
+
 				<section>
 					<h1>Learn Git</h1>
 					<h3>Session 3</h3>
@@ -502,329 +595,7 @@
 					</p>
 				</section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
+<!--							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);"> -->
 
 			</div>
 
