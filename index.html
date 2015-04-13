@@ -481,7 +481,7 @@
 					<section data-markdown>
 						## DAG
 
-						The git repository is a Directed Acyclic Graph.
+						> The git repository is a Directed Acyclic Graph.
 
 						Commits point one way, towards parents.
 
@@ -495,9 +495,12 @@
 
 						A commit hash provides uniquely identifies a commit:
 
-						commit hash = func(content + author + date + log + previous commit)
+						> commit hash = func(content + author + date + log + previous commit)
 
-						The uniqueness allows git to walk the history of a remote quickly to determine the last matching commit.
+						The uniqueness allows git to
+
+						* make some quick decisions
+						* guarantee that history hasn't been meddled with
 
 					</section>
 
@@ -520,13 +523,12 @@
 
 						A remote is another repository that you can link to your repository. **That's all**.
 
-						There is nothing special about a remote, it is just another repository.
-
-						You can mark one remote as _default_, and convention suggests we name this _origin_.
+						> You can mark one remote as _default_
+						> Convention suggests we name this _origin_.
 
 						Typically our default remote is BitBucket or GitHub.
 
-						> Remotes can be secured using https or ssh
+						> Remotes can be secured using https or ssh - another topic
 					</section>
 					<section data-markdown>
 						## Remotes from Cloning
@@ -552,13 +554,6 @@
 
 				<section>
 					<section data-markdown>
-						## Remote Branches
-						## Tracking Branches
-					</section>
-				</section>
-
-				<section>
-					<section data-markdown>
 						## Clone a remote repository
 
 						Objective: Learn how to clone a remote repository
@@ -569,6 +564,32 @@
 						## Clone using Source Tree
 
 
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						## Anatomy of a Remote
+
+						Objective: Learn about how remote and local branches interact
+					</section>
+
+					<section data-markdown>
+						## Remote Branches
+
+						git holds a snapshot of the remote branches (remote refs).
+
+						git only updates these during a git fetch or pull.
+					</section>
+
+					<section data-markdown>
+						## Tracking Branches
+
+						A tracking branch is a branch that tacks another.
+
+						It is common to set a local branch to track a remote branch.
+
+						For instance,  _master_ might track _origin/master_.
 					</section>
 				</section>
 
@@ -586,7 +607,11 @@
 					<section data-markdown>
 						## Fetch
 
+						> Fetch updates the remote branches of your repository with commits from the remote.
 
+						A clone is a standalone copy of a remote repository.
+
+						As people update the remote repository, your repository will age.
 					</section>
 
 					<section data-markdown>
