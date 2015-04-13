@@ -40,19 +40,17 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Learn Git</h1>
-					<h3>Session 1</h3>
-					<p>
-						<small>Created by <a href="http://trickbooter.com">Paul Harris</a> / <a href="http://twitter.com/trickbooter">@trickbooter</a></small>
-					</p>
-					<p>
-						<small>Git Basics</small>
-					</p>
+				<section data-markdown>
+					# Learn Git #
+
+					### Session 1 ###
+
+					Created by [Paul Harris](http://trickbooter.com) / [@trickbooter](http://twitter.com/trickbooter)
+
+					Git Basics
 				</section>
 
 				<section data-markdown>
-
 					## What am I learning
 
 					This training is split into 3 sessions
@@ -61,10 +59,14 @@
 					* Git Remotes, Branching & Merging
 					* Git Workflow
 
+					--
+
 					## Prerequisites
 
 					* Have a git client installed (recommended via Chocolatey)
 					* Have Source Tree installed
+
+					--
 
 					## Conventions
 
@@ -479,17 +481,34 @@
 					<section data-markdown>
 						## DAG
 
+						The git repository is a Directed Acyclic Graph.
+
+						Commits point one way, towards parents.
+
+						Circular references cannot be created.
+
+						![](http://think-like-a-git.net/assets/images2/reachability-example.png)
+
 					</section>
 					<section data-markdown>
 						## Commits & Commit Hash Codes
 
-vital - explains why get comparisons are fast
-what makes a hash
+						A commit hash provides uniquely identifies a commit:
+
+						commit hash = func(content + author + date + log + previous commit)
+
+						The uniqueness allows git to walk the history of a remote quickly to determine the last matching commit.
+
 					</section>
 
-					<section data-markdown>
-						## Refs
+					<section>
+						<h2>Refs</h2>
 
+						Refs are pointers to commits. Refs are local branch, remote branch and tag.<p/>
+
+						We saw local branch refs in session one. We will see remote branch refs in this session.</p>
+
+						<img width="500" data-src="https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/refs.png"/>
 					</section>
 				</section>
 
@@ -503,19 +522,38 @@ what makes a hash
 
 						There is nothing special about a remote, it is just another repository.
 
-						You can mark one remote as _default_, and convention suggests we name this _origin_. Typically our default remote is BitBucket or GitHub.
+						You can mark one remote as _default_, and convention suggests we name this _origin_.
+
+						Typically our default remote is BitBucket or GitHub.
+
+						> Remotes can be secured using https or ssh
 					</section>
 					<section data-markdown>
 						## Remotes from Cloning
 
 						If you want to take a copy of a remote repository from BitBucket or GitHub, you **clone** the repository.
 
-						Cloned repositories automatically get a default remote _origin_ added that points to the clone source.
+						Cloned repositories automatically configure a remote called _origin_ that points to the clone source.
+
+						> Cloning takes a full copy (a clone!) of the remote repository.
 					</section>
 					<section data-markdown>
 						## Adding Remotes
 
 						Remotes can be added to an existing repository at any time.
+
+						```
+						git remote add origin https://github.com/user/repo.git
+						```
+
+						Or via the UI.
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown>
+						## Remote Branches
+						## Tracking Branches
 					</section>
 				</section>
 
@@ -525,7 +563,7 @@ what makes a hash
 
 						Objective: Learn how to clone a remote repository
 
-
+						Let's get remote by cloning a repository.
 					</section>
 					<section data-markdown>
 						## Clone using Source Tree
@@ -534,8 +572,38 @@ what makes a hash
 					</section>
 				</section>
 
+				<section>
+					<section data-markdown>
+						## Fetch, Pull & Push
+
+						Objective: Learn how to interact with remotes
+
+						* Fetch: Updates your repository's remote branches from the remote
+						* Pull: Performs a fetch & merge into the tracked branch. *DON'T DO THIS*
+						* Push: Send commits from your repo to a remote
+
+					</section>
+					<section data-markdown>
+						## Fetch
+
+
+					</section>
+
+					<section data-markdown>
+						## Pull (don't do this)
+
+
+					</section>
+
+					<section data-markdown>
+						## Push
+
+
+					</section>
+				</section>
+
 				<section data-markdown>
-					## Collaborative Workflow
+					## Collaborative Workflow / BIG DEMO
 
 					Objective: Learn how to use git collaboratively
 
