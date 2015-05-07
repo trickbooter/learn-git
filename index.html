@@ -562,12 +562,32 @@
 					</section>
 					<section data-markdown>
 						## Clone using Source Tree
+						
+						* Click Clone
+						* Fill in the remote repo URL
+						  * There are two url schemes, ssh and https. We will use https for simplicity.
+						
+						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/clone-remote.PNG)
 
+						> clone url https://<username>@bitbucket.org/Retail_Development/learn-git-collab.git
+
+					</section>
+					<section data-markdown>
+						## Review the remote tracking branches
+						
+						* Expand the 'origin' remote to view the ** remote tracking branches **
+						* They are a snapshot of the remote repository at the time of cloning
+						* They are stored locally, but are read-only
+						* Git uses then to determine how far ahead or behind your repository is from the remote 
+						* They provide an offline view of remote repositories
+						
+						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/remote-branches.png)
 
 					</section>
 					<section data-markdown>
 						## Clone using Git Bash
-
+						
+						* git clone https://<username>@bitbucket.org/Retail_Development/learn-git-collab.git
 
 					</section>
 				</section>
@@ -598,7 +618,7 @@
 
 						> commit hash = func(content + author + date + log + previous commit)
 
-						The DAG and commit uniqueness allows git to see if a repo is _ahead_ or _behind_ another repo.
+						The DAG and commit uniqueness allows git to quickly assess if a repo is _ahead_ or _behind_ another repo.
 
 					</section>
 
@@ -619,7 +639,7 @@
 
 						Objective: Learn how to interact with remotes
 
-						* Fetch: Updates your repository's remote branches from the remote
+						* Fetch: Updates your repository's remote branches from remote repository
 						* Pull: Performs a fetch & merge into the current (tracked) branch. *DON'T DO THIS*
 						* Push: Send commits from your repo to a remote
 
@@ -644,50 +664,54 @@
 						1. Fetch  
 						1. Merge  
 						
-						The merge is performed automaticaly on all branches.
+						The merge is performed automaticaly on your current branch.
 						
-						A fetch and specific merge is preferred.
+						A fetch and merge as two operations provides better control.
 						
 					</section>
 
 					<section data-markdown>
 						## Push
 
-
+						> Push sends local repository commits to a remote repository
+						
 					</section>
 				</section>
-
-
-
+				
 				<section>
 					<section data-markdown>
 						## Git Stash
 
 						Objective: Learn how to stash (shelve) changes temporarily
 
-
+						> Stash allows uncommitted changes to be stored in local temporary storage.
+						
+						Sometimes it is useful to quickly get to a clean working copy (maybe you want to switch branches). 
+						
+						Stash is a convenient mechanism to allow this.
 					</section>
 					<section data-markdown>
-						## Stash using Source Tree
-
-
+						## Stash using Source Tree ##
+						
+						* Stage changes    
+						* Click stash    
+						
+						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/stash.PNG)
+						   
 					</section>
 				</section>
 
 				<section data-markdown>
-					## Summary of Session 1
+					## Summary of Session 2
 
 					I have included tfs equivalents
 
 					| **action** | **git** | **tfs** |
 					| - | - | - |
-					| new repo | git init | new team project |
 					| clone | git clone | get latest |
-					| stage chages | git add | n/a |
-					| history | git log | tf history |
-					| branch | git branch | tf branch |
-					| switch branches | git checkout | n/a |
-					| merge | git merge | tf merge |
+					| fetch | git fetch | |
+					| pull | git pull | |
+					| push | git push | |
 					| | | |
 
 				</section>
@@ -708,9 +732,7 @@
 
 					Objective: Learn how to use git collaboratively
 
-					We are going to
-
-					* all clone the same repo
+					* Clone the same repo
 					* Isolate our feature development using a branch
 					* Do work on our branch
 					* Merge changes to master
@@ -720,27 +742,61 @@
 
 				<section>
 					<section data-markdown>
-						## Clone the Repository
+						## Steps
+
+						* Clone https://bitbucket.org/Retail_Development/learn-git-collab
+						* Only branch from dev branch
+						* Create new features on their own branches 
+						* Make changes to feature branch
+						* Perform merges to dev branch^
 
 					</section>
-
 					<section data-markdown>
-						## Branch to Isolate
+						## Features Required
+						
+						Feature 1: Print "Hello, World!, Hello, Git!"  
+						```
+						Console.Writeline("str")
+						```
+						
+						Feature 2: Abstract print feature
+						```
+						static void Main(string[] args) 
+						{ PrintWords("str"); } 
+						
+						static void PrintWords(string s) 
+						{ Console.Write(s); }
+						```
+						Feature 3:  Abstract print writer
+						```
+						static void Main(string[] args) 
+						{ PrintWords("str", Console.Out); } 
+						
+						static void PrintWords(string s, System.IO.TextWriter w) 
+						{ w.Write(s); }
+						```
 
 					</section>
-
+					
 					<section data-markdown>
-						## Develop
-
-					</section>
-
-					<section data-markdown>
-						## Update your Branch
-
-					</section>
-
-					<section data-markdown>
-						## Push Changes
+						## Steps
+						
+						| *step* | *cmd* |
+						| - | - |
+						| Clone the repo | git clone <url> |
+						| Checkout dev branch | git checkout --track -b dev origin/dev |
+						| Create new branch | git branch my-feature-1 |
+						| Open solution in VSIDE to do work | |
+						| Commit | git add --all |
+						| | git commit -m "feature 1" |
+						| Fetch from remote | git fetch |
+						| Merge origin/dev into dev | git checkout dev |
+						| | git merge origin/dev |
+						| Merge dev into your-feature-branch | git checkout my-feature-1 |
+					  | | git merge dev | 
+						| (resolve conflicts in VSIDE) | |
+						| Push | git push |
+						| | |
 
 					</section>
 
