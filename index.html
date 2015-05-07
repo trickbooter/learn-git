@@ -80,7 +80,7 @@
 						TL;DR; Everyone else is using it. Skill up.
 					</p>
 					<ul>
-					  <li>FAST</li>
+					  <li>Fast</li>
 					  <li>Distributed - everyone has a complete local copy</li>
 					  <li>Develop offline; see all history</li>
 					  <li>Branch, commit, merge locally, paint your picture</li>
@@ -116,6 +116,7 @@
 						  <li>Repo - the immutable commit store. The latest commit is referenced as HEAD</li>
 						</ul>
 						<img data-src="https://rogerdudler.github.com/git-guide/img/trees.png"/>
+						<i>image from Roger Dudler</i>
 					</section>
 					<section>
 						<h2>Branches</h2>
@@ -125,6 +126,7 @@
 						  <li>Switch to other branches to make changes (i.e. make hotfix for release)</li>
 						</ul>
 						<img data-src="https://rogerdudler.github.com/git-guide/img/branches.png"/>
+						<i>image from Roger Dudler</i>
 					</section>
 					<section>
 					  <h2>The Repo Object Model - DAG</h2>
@@ -136,6 +138,7 @@
 						</ul>
 					  </p>
 						<img data-src="http://think-like-a-git.net/assets/images2/reachability-example.png"/>
+						<i>image from Think Like a Git</i>
 					</section>
 					<section>
 						<h2>Refs</h2>
@@ -506,15 +509,31 @@
 
 						> Remotes can be secured using https or ssh - another topic
 					</section>
+
 					<section data-markdown>
 						## Local / Remote Relationship
 						
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/remote-branches-concept.png)
 					</section>
+
+					<section data-markdown>
+						## Remote Branches
+
+						git holds a snapshot of the remote branches (remote refs).
+
+						git only updates these during a git fetch or pull.
+						
+						You can see them in SourceTree under Remotes.
+						or
+						```
+						git branch -a
+						```
+					</section>
+
 					<section data-markdown>
 						## Cloning Remotes
 
-						If you want to take a copy of a remote repository from BitBucket or GitHub, you **clone** the repository.
+						To take a copy of a remote repository from BitBucket or GitHub, you **clone** the repository.
 
 						Cloned repositories automatically configure a remote called _origin_ that points to the clone source.
 
@@ -550,39 +569,6 @@
 						## Clone using Git Bash
 
 
-					</section>
-				</section>
-
-				<section>
-					<section data-markdown>
-						## Anatomy of a Remote
-
-						Objective: Learn about how remote and local branches interact
-					</section>
-					
-					<section data-markdown>
-						## Remote Branches
-
-						git holds a snapshot of the remote branches (remote refs).
-
-						git only updates these during a git fetch or pull.
-						
-						You can see them in SourceTree under Remotes.
-						or
-						```
-						git branch -a
-						```
-					</section>
-
-					<section data-markdown>
-						## Tracking Branches
-
-						A tracking branch is a branch that tracks another.
-
-						It is used to associate a local branch with a remote branch.	
-
-						For instance,  _master_ might track _origin/master_.
-						
 					</section>
 				</section>
 
