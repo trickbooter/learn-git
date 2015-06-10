@@ -424,7 +424,7 @@
 						Remember that a branch is just a *ref* to a commit. If the following is true
 
 						* commits to feature-branch-a
-						* no commits to master
+						* no commits to master after creating feature-branch-a
 
 						when we merge feature-branch-a into master they will be identical, so a fast-forward merge _moves the master pointer to the feature-branch-a HEAD_
 					</section>
@@ -433,7 +433,7 @@
 
 						Merges target the current branch. If we are on master and we merge feature-branch-a, we are asking for feature-branch-a to be merged into master .
 
-						* Switch to feature-branch-a
+						* Checkout feature-branch-a
 						* Make a change to c:\git\learn-git\README.txt & commit
 
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/feat-branch-a-change-small.PNG)
@@ -444,7 +444,7 @@
 					<section data-markdown>
 						## Merge using Source Tree
 
-						* Switch to master (our merge target branch)
+						* Checkout master (our target branch)
 						* Right click the latest feature-branch-a commit and choose merge
 
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/merge-ui.png)
@@ -460,11 +460,8 @@
 
 						```
 						git checkout feature-branch-a
-						```
-
-						* Make a change to README.md & commit
-
-						```
+						echo "another change" >> README.md
+						git add --all
 						git commit -m "changed README.md"
 						```
 
@@ -736,6 +733,8 @@
 					</p>
 					<p>
 						<small>Collaborative Workflow</small>
+						<p/>
+						!!!INCOMPLETE!!!
 					</p>
 				</section>
 
