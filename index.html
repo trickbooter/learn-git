@@ -322,6 +322,10 @@
 						Objective: Learn how to create a branch
 
 						Branching isolates your development effort from other branches.
+						
+						1. Keep tasks isolated
+						2. Improves testability and quality
+						3. Developers can keep their efforts separate
 
 					</section>
 					<section data-markdown>
@@ -338,10 +342,17 @@
 						## Branching Using Git Bash
 
 						```
-						git branch my-feature-branch-a
+						git branch feature-branch-b
+						git checkout feature-branch-b
+						```
+						
+						or shorthand...
+						
+						```
+						git checkout -b feature-branch-b
 						```
 
-						Branches the current branch's latest commit to my-feature-branch-a.
+						Branches the current branch's latest commit to my-feature-branch-b.
 					</section>
 
 					<section data-markdown>
@@ -388,9 +399,9 @@
 						git checkout feature-branch-a
 						```
 
-						You can combine a branch and switch in one command using
+						Remember you can combine a branch and switch in one command using
 						```
-						git checkout -b feature-branch-a
+						git checkout -b _your-branch-name_
 						```
 					</section>
 				</section>
