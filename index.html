@@ -111,7 +111,7 @@
 					<section>
 						<h2>Repository Areas</h2>
 						<ul>
-						  <li>Working Copy - where you do the work</li>
+						  <li>Working Copy - the directory that you work in, the repo root</li>
 						  <li>Staging/Stage/Index - a commit shopping basket used to organise what goes into a commit</li>
 						  <li>Repo - the immutable commit store. The latest commit is referenced as HEAD</li>
 						</ul>
@@ -166,9 +166,8 @@
 
 						Objective: Initialise a new repository and look at the git artefacts
 
-						Create two directories for ui and command line.
+						Create a directory for your repository
 
-						* c:/git/learn-git-ui
 						* c:/git/learn-git
 					</section>
 					<section data-markdown>
@@ -176,7 +175,7 @@
 
 						  * Clone/New
 						  * Create New Repository tab
-						  * Repo Type=git; Path=c:\git\learn-git-ui
+						  * Repo Type=git; Path=c:\git\learn-git
 
 
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/git-init.PNG)
@@ -184,11 +183,22 @@
 					<section data-markdown>
 						## Git Bash
 
+						Switch to the repository directory
+						
 						```
 						cd /c/git/learn-git
-						git init
-						ls /c/git/learn-git/.git
 						```
+						Git is implemented in the filesystem. View the repo's git directory using
+						```
+						ls .git
+						```
+						
+						Since we have already created a repository, we won't do it again. For completeness, the command is
+						```
+						git init
+						```
+						
+						_Keep this window open, you'll need it_
 					</section>
 				</section>
 
@@ -205,15 +215,14 @@
 
 						I am learning git
 						```
-						Copy the file to c:\git\learn-git-ui
 
 					</section>
 					<section data-markdown>
 						## Add Content Using SourceTree
 
-						  * File will appear in 'Working Copy'
+						  * File will appear as a new file in 'Working Copy'
 						  * Set view to 'Pending Files Sorted By Status'
-						  * Tick README.txt to add file to Staging area
+						  * Tick README.md to add file to Staging area
 						  * Click commit, add a message "Adding README.txt" and commit
 
 
@@ -224,10 +233,11 @@
 						## Add Content Using Git Bash
 
 						```
+						echo "Another Readme" >> README2.md
 						git status
-						git add README.md
+						git add README2.md
 						git status
-						git commit -m "Adding README.md"
+						git commit -m "Adding README2.md"
 						```
 
 						_git status_ is very useful
@@ -240,7 +250,7 @@
 
 						Objective: Modify existing content
 
-						Edit the README.txt in c:\git\learn-git
+						Edit the README.md in c:\git\learn-git
 
 						```
 						## Learn-Git Readme
@@ -248,24 +258,13 @@
 						I am learning git.
 						Git is great.
 						```
-						Copy & replace the file to c:\git\learn-git-ui
-
-						Create specs.md in c:\git\learn-git\docs
-
-						```
-						## Specification Data
-
-						We need to learn git to survive.
-						```
-						Copy the file to c:\git\learn-git-ui\docs
-
 					</section>
 					<section data-markdown>
 						## Modify Content Using SourceTree
 
 						  * Files will appear in 'Working Copy'
-						  * Tick README.txt & \docs\specs.md to add file to Staging area
-						  * Click commit, add a message "Modifying README.md, adding specs.md" and commit
+						  * Tick README.md
+						  * Click commit, add a message "Modifying README.md" and commit
 
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/add-mod-unstaged.PNG)
 
@@ -274,9 +273,14 @@
 						## Modify Content Using Git Bash
 
 						```
+						echo "modifying readme" >> README2.md
+						mkdir docs
+						echo "specs file" >> docs/specs.md
+						```
+						```
 						git status
 						git add README.md
-						git add docs\specs.md
+						git add docs/specs.md
 						git status
 						git commit -m "Modifying README.md, adding specs.md"
 						```
