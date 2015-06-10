@@ -223,7 +223,7 @@
 						  * File will appear as a new file in 'Working Copy'
 						  * Set view to 'Pending Files Sorted By Status'
 						  * Tick README.md to add file to Staging area
-						  * Click commit, add a message "Adding README.txt" and commit
+						  * Click commit, add a message "Adding README.md	" and commit
 
 
 						  ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/first-commit-staged.PNG)
@@ -273,16 +273,13 @@
 						## Modify Content Using Git Bash
 
 						```
-						echo "modifying readme" >> README2.md
-						mkdir docs
-						echo "specs file" >> docs/specs.md
+						echo "modifying readme2" >> README2.md
 						```
 						```
 						git status
-						git add README.md
-						git add docs/specs.md
+						git add README2.md
 						git status
-						git commit -m "Modifying README.md, adding specs.md"
+						git commit -m "Modifying README2.md"
 						```
 
 						you can also use _git add --all_ to add everything that isn't tracked.
