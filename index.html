@@ -184,7 +184,7 @@
 						## Git Bash
 
 						Switch to the repository directory
-						
+
 						```
 						cd /c/git/learn-git
 						```
@@ -192,12 +192,12 @@
 						```
 						ls .git
 						```
-						
+
 						Since we have already created a repository, we won't do it again. For completeness, the command is
 						```
 						git init
 						```
-						
+
 						_Keep this window open, you'll need it_
 					</section>
 				</section>
@@ -322,7 +322,7 @@
 						Objective: Learn how to create a branch
 
 						Branching isolates your development effort from other branches.
-						
+
 						1. Keep tasks isolated
 						2. Improves testability and quality
 						3. Developers can keep their efforts separate
@@ -333,7 +333,7 @@
 
 						* Right click the commit you wish to branch from (choose the latest commit)
 						* Click branch
-						
+
 
 						 ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/branch-ui-menu.png)
 						 ![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/branch-ui-dialog.PNG)
@@ -345,9 +345,9 @@
 						git branch feature-branch-b
 						git checkout feature-branch-b
 						```
-						
+
 						or shorthand...
-						
+
 						```
 						git checkout -b feature-branch-b
 						```
@@ -511,8 +511,8 @@
 
 						A remote is another repository that you can link to your repository. **That's all**.
 
-						> You can mark one remote as _default_  
-						> Convention suggests we name this _origin_	
+						> You can mark one remote as _default_
+						> Convention suggests we name this _origin_
 
 						Typically our default remote is BitBucket or GitHub.
 
@@ -521,7 +521,7 @@
 
 					<section data-markdown>
 						## Local / Remote Relationship
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/remote-branches-concept.png)
 					</section>
 
@@ -531,7 +531,7 @@
 						git holds a snapshot of the remote branches (remote refs).
 
 						git only updates these during a git fetch or pull.
-						
+
 						You can see them in SourceTree under Remotes.
 						or
 						```
@@ -571,11 +571,11 @@
 					</section>
 					<section data-markdown>
 						## Clone using Source Tree
-						
+
 						* Click Clone
 						* Fill in the remote repo URL
 						  * There are two url schemes, ssh and https. We will use https for simplicity.
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/clone-remote.PNG)
 
 						> clone url https://&lt username &gt@bitbucket.org/Retail_Development/learn-git-collab.git
@@ -583,24 +583,24 @@
 					</section>
 					<section data-markdown>
 						## Review the remote tracking branches
-						
+
 						* Expand the 'origin' remote to view the ** remote tracking branches **
 						* They are a snapshot of the remote repository at the time of cloning
 						* They are stored locally, but are read-only
-						* Git uses then to determine how far ahead or behind your repository is from the remote 
+						* Git uses then to determine how far ahead or behind your repository is from the remote
 						* They provide an offline view of remote repositories
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/remote-branches.png)
 
 					</section>
 					<section data-markdown>
 						## Clone using Git Bash
-						
+
 						* Using https
 						```
 						git clone https://&lt username &gt@bitbucket.org/Retail_Development/learn-git-collab.git
 						```
-						
+
 						* Using ssh - (requires setup - another lesson)
 						```
 						git clone git@bitbucket.org:Retail_Development/learn-git-collab.git
@@ -664,57 +664,94 @@
 					<section data-markdown>
 						## Fetch
 
-						> Fetch updates the remote branches of your repository with commits from remote repo(s).  
+						> Fetch updates the remote branches of your repository with commits from remote repo(s).
 
 						As commits are pushed to the remote repository, your repository will age.
-						
+
 						Fetch _updates_ your clone with the latest commits from remote repo's.
-						
+
 						Fetch **does not** merge changes into your branch.
 					</section>
 
 					<section data-markdown>
-						## Pull (don't do this)
+						## Pull
 
-						A pull is actually two operations  
-						
-						1. Fetch  
-						1. Merge  
-						
+						A pull is actually two operations
+
+						1. Fetch
+						1. Merge
+
 						The merge is performed automaticaly on your current branch.
-						
+
 						A fetch and merge as two operations provides better control.
-						
+
 					</section>
 
 					<section data-markdown>
 						## Push
 
 						> Push sends local repository commits to a remote repository
-						
+
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
-						## Git Stash
+						## Practical Exercise
 
-						Objective: Learn how to stash (shelve) changes temporarily
+						*Steps Overview*
 
-						> Stash allows uncommitted changes to be stored in local temporary storage.
-						
-						Sometimes it is useful to quickly get to a clean working copy (maybe you want to switch branches). 
-						
-						Stash is a convenient mechanism to allow this.
+						1. Clone a demo repository
+						2. Create a new branch
+						3. Implement a new 'feature'
+						4. Commit your code
+						5. Pull any upstream changes
+						6. Merge your changes into the master branch
+						7. Push to the remote
+
+
+						1. Clone
+
+						> git clone https://&lt username &gt@bitbucket.org/Retail_Development/learn-git-collab.git
+
+						2.
+
 					</section>
 					<section data-markdown>
-						## Stash using Source Tree ##
-						
-						* Stage changes    
-						* Click stash    
-						
-						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/stash.PNG)
-						   
+						## Practical Exercise
+
+						1. Clone
+
+						> git clone https://&lt username &gt@bitbucket.org/Retail_Development/learn-git-collab.git
+
+						2. Create a new branch from master. Call it (yourname)_feature for this demo.
+
+						> # ensure that we are on master
+						> git checkout master
+						> # branch
+						> git checkout -b "(yourusername)-awesome-feature"
+
+						3. Open the solution and ADD a class, table or text file. Do not modify existing files. Save the solution (Ctrl+Shift+S)
+
+					</section>
+					<section data-markdown>
+						## Practical Exercise
+
+						4. Commit your code (VS, SourceTree or git bash)
+
+						> git commit -a -m "implemented my feature"
+
+						5. Pull any upstream changes to merge other peoples changes into your code.
+
+						> git pull
+
+						6. Merge your changes into master
+
+						> git checkout master
+						> git merge (yourbranchname)
+						> git add --all
+						> git commit -m "Merging my aswesome feature into master"
+
 					</section>
 				</section>
 
@@ -765,41 +802,41 @@
 
 						* Clone https://bitbucket.org/Retail_Development/learn-git-collab
 						* Only branch from dev branch
-						* Create new features on their own branches 
+						* Create new features on their own branches
 						* Make changes to feature branch
 						* Perform merges to dev branch^
 
 					</section>
 					<section data-markdown>
 						## Features Required
-						
-						Feature 1: Print "Hello, World!, Hello, Git!"  
+
+						Feature 1: Print "Hello, World!, Hello, Git!"
 						```
 						Console.Writeline("str")
 						```
-						
+
 						Feature 2: Abstract print feature
 						```
-						static void Main(string[] args) 
-						{ PrintWords("str"); } 
-						
-						static void PrintWords(string s) 
+						static void Main(string[] args)
+						{ PrintWords("str"); }
+
+						static void PrintWords(string s)
 						{ Console.Write(s); }
 						```
 						Feature 3:  Abstract print writer
 						```
-						static void Main(string[] args) 
-						{ PrintWords("str", Console.Out); } 
-						
-						static void PrintWords(string s, System.IO.TextWriter w) 
+						static void Main(string[] args)
+						{ PrintWords("str", Console.Out); }
+
+						static void PrintWords(string s, System.IO.TextWriter w)
 						{ w.Write(s); }
 						```
 
 					</section>
-					
+
 					<section data-markdown>
 						## Steps
-						
+
 						| *step* | *cmd* |
 						| - | - |
 						| Clone the repo | git clone <url> |
@@ -812,7 +849,7 @@
 						| Merge origin/dev into dev | git checkout dev |
 						| | git merge origin/dev |
 						| Merge dev into your-feature-branch | git checkout my-feature-1 |
-					  | | git merge dev | 
+					  | | git merge dev |
 						| (resolve conflicts in VSIDE) | |
 						| Push | git push |
 						| | |
