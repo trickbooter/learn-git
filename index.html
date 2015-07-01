@@ -729,24 +729,38 @@
 
 						*Steps Overview*
 
-						1. Clone a demo repository
-						2. Create a new branch
-						3. Implement a new 'feature'
-						4. Commit your code
-						5. Pull any upstream changes
-						6. Merge your changes into the master branch
-						7. Push to the remote
+						1. Fork a demo repository
+						1. Clone the repository
+						1. Create a new branch
+						1. Implement a new 'feature'
+						1. Commit your code
+						1. Pull any upstream changes
+						1. Merge your changes into the master branch
+						1. Push to the remote
 
 					</section>
 
 					<section data-markdown>
 						## Practical Exercise
 
-						1. Clone
+						1. Fork my demo repository to create a copy in your own bitbucket account
+						
+						> https://bitbucket.org/trickbooter/learn-git-collab
+						
+						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/fork-button.PNG)
+						
+						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/fork-page.PNG)
+						
+						2. Clone the repository
 
-						> git clone https://&lt username &gt@bitbucket.org/Retail_Development/learn-git-collab.git
+						> git clone https://&lt username &gt@bitbucket.org/&lt username &gt/learn-git-collab.git
 
-						2. Create a new branch from master. Call it (yourname)_feature for this demo.
+					</section>
+					
+					<section data-markdown>
+						## Practical Exercise
+
+						3. Create a new branch from master. Call it (yourname)_feature for this demo.
 
 						```
 						// ensure that we are on master
@@ -755,34 +769,69 @@
 						git checkout -b "(yourusername)-awesome-feature"
 						```
 
-						3. Open the solution and ADD a class, table or text file. Do not modify existing files. Save the solution (Ctrl+Shift+S)
+						4. Open the solution and ADD a class, table or text file. Do not modify existing files. Save the solution (Ctrl+Shift+S)
 
 					</section>
 
 					<section data-markdown>
 						## Practical Exercise
 
-						4. Commit your code (VS, SourceTree or git bash)
+						5. Commit your code (VS, SourceTree or git bash)
 
 						```
-						git commit -a -m "implemented my feature"
+						git add --all
+						git commit -m "implemented my feature"
 						```
 
-						5. Pull any upstream changes to merge other peoples changes into your code.
+						6. Pull any upstream changes to merge other peoples changes into your code.
 
 						```
 						git pull
 						```
 
-						6. Merge your changes into master
+						7. Merge your changes into master (VS, SourceTree or git bash)
 
 						```
 						git checkout master
 						git merge (yourbranchname)
 						git add --all
-						git commit -m "Merging my aswesome feature into master"
+						git commit -m "Merging my awesome-feature into master"
 						```
 
+					</section>
+				</section>
+				
+				<section>
+					<section data-markdown>
+						## Conflict Merging
+						
+						Conflicts resolution is an integral part of merging.
+						
+						When two people edit the same thing, a human must decide what the result should look like.
+						
+						Merges are best handled in a merge tool. VS comes with one, but there are many others:
+						
+						* Beyond Compare
+						* Araxis
+						* Kaleidoscope 
+						* many more...
+						
+					</section>
+					
+					<section data-markdown>
+						## Practical Exercise
+						
+						Conflict resolution is an integral part of merging.
+						
+						When two people edit the same thing, a human must decide what the result should look like.
+						
+						Merges are best handled in a merge tool. VS comes with one, but there are many others:
+						
+						* Beyond Compare
+						* Araxis
+						* Kaleidoscope 
+						* many more...
+						
 					</section>
 				</section>
 
