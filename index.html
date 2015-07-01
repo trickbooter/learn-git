@@ -647,6 +647,8 @@
 						> commit hash = func(content + author + date + log + previous commit)
 
 						The DAG and commit uniqueness allows git to quickly assess if a repo is _ahead_ or _behind_ another repo.
+						
+						Understanding the DAG model is vital in understanding how comparisons are done between local and remote branches, and how merges are performed so succesfully.
 
 					</section>
 
@@ -658,6 +660,7 @@
 						We saw local branch refs in session one. We will see remote branch refs in this session.</p>
 
 						<img width="500" data-src="https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/refs.png"/>
+						
 					</section>
 				</section>
 
@@ -668,7 +671,7 @@
 						Objective: Learn how to interact with remotes
 
 						* Fetch: Updates your repository's remote branches from remote repository
-						* Pull: Performs a fetch & merge into the current (tracked) branch. *DON'T DO THIS*
+						* Pull: Performs a fetch & merge into the current (tracked) branch.
 						* Push: Send commits from your repo to a remote
 
 					</section>
@@ -682,6 +685,11 @@
 						Fetch _updates_ your clone with the latest commits from remote repo's.
 
 						Fetch **does not** merge changes into your branch.
+						
+						```
+						git fetch
+						```
+						
 					</section>
 
 					<section data-markdown>
@@ -692,9 +700,13 @@
 						1. Fetch
 						1. Merge
 
-						The merge is performed automaticaly on your current branch.
+						The merge is performed automatically on your current branch.
 
 						A fetch and merge as two operations provides better control.
+						
+						```
+						git pull
+						```
 
 					</section>
 
@@ -702,6 +714,11 @@
 						## Push
 
 						> Push sends local repository commits to a remote repository
+						
+						```
+						git push
+						```
+
 
 					</section>
 				</section>
@@ -781,6 +798,15 @@
 					| pull | git pull | |
 					| push | git push | |
 					| | | |
+					
+					*What next*
+					
+					* Please please please do some extra reading
+					** http://think-like-a-git.net/
+					* And please please please practice branching and merging
+					** Think about the benefits of branching
+					** Think about what merges are. 
+					** They are not admin, they are an integral of your feature development.
 
 				</section>
 
