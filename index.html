@@ -564,7 +564,7 @@
 						Or via the UI.
 
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/add-remote-sourcetree.png)
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/add-remote-sourcetree-dialog.png)
 
 					</section>
@@ -596,7 +596,7 @@
 						* Expand the 'origin' remote to view the ** remote tracking branches **
 						* They are a snapshot of the remote repository at the time of cloning
 						* They are stored locally, but are read-only
-						* Git uses then to determine how far ahead or behind your repository is from the remote
+						* Git uses them to determine how far ahead or behind your repository is from the remote
 						* They provide an offline view of remote repositories
 
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/remote-branches.png)
@@ -606,13 +606,13 @@
 						## Clone using Git Bash
 
 						* Using https
-						
+
 						```
 						git clone https://&lt username &gt@bitbucket.org/Retail_Development/learn-git-collab.git
 						```
 
 						* Using ssh - (requires setup - another lesson)
-						
+
 						```
 						git clone git@bitbucket.org:Retail_Development/learn-git-collab.git
 						```
@@ -647,8 +647,8 @@
 						> commit hash = func(content + author + date + log + previous commit)
 
 						The DAG and commit uniqueness allows git to quickly assess if a repo is _ahead_ or _behind_ another repo.
-						
-						Understanding the DAG model is vital in understanding how comparisons are done between local and remote branches, and how merges are performed so succesfully.
+
+						Understanding the DAG model is vital in understanding how comparisons are done between local and remote branches, and how merges are performed so successfully.
 
 					</section>
 
@@ -660,7 +660,7 @@
 						We saw local branch refs in session one. We will see remote branch refs in this session.</p>
 
 						<img width="500" data-src="https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/refs.png"/>
-						
+
 					</section>
 				</section>
 
@@ -685,11 +685,11 @@
 						Fetch _updates_ your clone with the latest commits from remote repo's.
 
 						Fetch **does not** merge changes into your branch.
-						
+
 						```
 						git fetch
 						```
-						
+
 					</section>
 
 					<section data-markdown>
@@ -703,7 +703,7 @@
 						The merge is performed automatically on your current branch.
 
 						A fetch and merge as two operations provides better control.
-						
+
 						```
 						git pull
 						```
@@ -714,7 +714,7 @@
 						## Push
 
 						> Push sends local repository commits to a remote repository
-						
+
 						```
 						git push
 						```
@@ -744,19 +744,17 @@
 						## Practical Exercise
 
 						1 Fork my demo repository to create a copy in your own bitbucket account
-						
+
 						> https://bitbucket.org/trickbooter/learn-git-collab
-						
-						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/fork-button.PNG)
-						
-						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/fork-page.PNG)
-						
+
+						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/fork-comp.PNG)
+
 						2 Clone the repository
 
 						> git clone https://&lt username &gt@bitbucket.org/&lt username &gt/learn-git-collab.git
 
 					</section>
-					
+
 					<section data-markdown>
 						## Practical Exercise
 
@@ -783,7 +781,7 @@
 						git commit -m "implemented my awesome feature"
 						```
 
-						6 Pull any upstream changes to merge other peoples changes into your code.
+						6 Pull any upstream changes to merge other people's changes into your code.
 
 						```
 						git pull
@@ -800,73 +798,73 @@
 
 					</section>
 				</section>
-				
+
 				<section>
 					<section data-markdown>
 						## Conflict Merging
-						
+
 						Conflicts resolution is an integral part of merging.
-						
+
 						When two people edit the same thing, a human must decide what the result should look like.
-						
+
 						Merges are best handled in a merge tool. VS comes with one, but there are many others:
-						
+
 						* Beyond Compare
 						* Araxis
-						* Kaleidoscope 
+						* Kaleidoscope
 						* many more...
-						
+
 						We are going to use Visual Studio for this demo.
-						
+
 					</section>
-					
+
 					<section data-markdown>
 						## Conflict Merging Practical Exercise
-						
-						1. Using the demo repository your previously forked
+
+						1. Using the demo repository you previously forked
 						1. Checkout target branch 'abstract-logger'
 						1. Merge generalised-log-writer into abstract-logger
 						1. Resolve conflicts
-						
+
 					</section>
-					
+
 					<section data-markdown>
 						## Conflict Merging Practical Exercise
-						
+
 						* Open the solution in Visual Studio HelloGitWorld.sln
 						* Open Team Explorer
-						* Click Branches 
-						
+						* Click Branches
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/vs-git-branches-button.PNG)
-						
+
 						* Right click Abstract-Logger > Checkout
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/vs-git-branches-checkout.PNG)
-						
+
 					</section>
-					
+
 					<section data-markdown>
 						## Conflict Merging Practical Exercise
-						
+
 						* Right click Generalised-Log-Writer > Merge
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/vs-git-branches-merge.PNG)
-						
+
 						* Click merge, you will get a merge conflicts warning
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/vs-merge-conflict-banner.PNG)
-						
+
 					</section>
-					
+
 					<section data-markdown>
 						## Conflict Merging Practical Exercise
-						
+
 						* Try to resolve these conflicts and commit the merge
-						
+
 						![](https://raw.githubusercontent.com/trickbooter/learn-git/gh-pages/assets/vs-merging.PNG)
-						
+
 					</section>
-					
+
 				</section>
 
 				<section data-markdown>
@@ -881,15 +879,15 @@
 					| pull | git pull | |
 					| push | git push | |
 					| | | |
-					
+
 					*What next*
-					
+
 					* Please please please do some extra reading
 						* http://think-like-a-git.net/
 					* And please please please practice branching and merging
-						* Think about the benefits of branching
-						* Think about what merges are. 
-						* They are not admin, they are an integral of your feature development.
+						* Think about the benefits of branching.
+						* Think about what merges are.
+						* This is not admininistrative, it is an integral of your feature development.
 
 				</section>
 
